@@ -1,4 +1,6 @@
-package com.alexbowns.mountainstats;
+package com.alexbowns.mountainstats.Forecast;
+
+import com.alexbowns.mountainstats.MountainName;
 
 import java.util.Date;
 
