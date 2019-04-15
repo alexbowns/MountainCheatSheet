@@ -1,4 +1,4 @@
-package com.alexbowns.mountainstats;
+package com.alexbowns.mountainstats.InnerLayer.Domain;
 
 public enum MountainName
 {

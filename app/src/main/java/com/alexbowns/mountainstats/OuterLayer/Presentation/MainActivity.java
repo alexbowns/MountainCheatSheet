@@ -1,7 +1,9 @@
-package com.alexbowns.mountainstats;
+package com.alexbowns.mountainstats.OuterLayer.Presentation;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.alexbowns.mountainstats.R;
 
 public class MainActivity extends AppCompatActivity
 {

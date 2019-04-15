@@ -1,4 +1,4 @@
-package com.alexbowns.mountainstats.WeatherStation;
+package com.alexbowns.mountainstats.InnerLayer.Domain.WeatherStation;
 
 import java.util.List;
 
