@@ -1,4 +1,4 @@
-package com.alexbowns.mountainstats.OuterLayer.Presentation;
+package com.alexbowns.mountainstats.Presentation;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
