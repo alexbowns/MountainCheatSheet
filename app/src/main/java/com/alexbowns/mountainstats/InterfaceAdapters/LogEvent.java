@@ -1,6 +1,6 @@
 package com.alexbowns.mountainstats.InterfaceAdapters;
 
 public interface LogEvent {
-    void logSaved(Log log);
-    void logDeleted(Log log);
+    void logSaved(LogInput logInput);
+    void logDeleted(LogInput logInput);
 }
