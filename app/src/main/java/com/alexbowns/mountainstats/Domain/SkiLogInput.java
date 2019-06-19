@@ -1,42 +1,54 @@
 package com.alexbowns.mountainstats.Domain;
 
-import android.media.Image;
-
 import com.alexbowns.mountainstats.DataObjects.LogData;
+import com.alexbowns.mountainstats.DataObjects.LogImage;
+import com.alexbowns.mountainstats.DataObjects.LogLocation;
 import com.alexbowns.mountainstats.InterfaceAdapters.LogInput;
 
 import java.util.Date;
 
 public class SkiLogInput implements LogInput
 {
-    @Override
-    public void setDetails(String details) {
+    private LogData currentLogData;
 
+    public SkiLogInput()
+    {
+        currentLogData = new LogData();
     }
 
     @Override
-    public void setTitle(String title) {
-
+    public void setDetails(String details)
+    {
+        currentLogData.details = details;
     }
 
     @Override
-    public void setImage(Image image) {
-
+    public void setTitle(String title)
+    {
+        currentLogData.title = title;
     }
 
     @Override
-    public void setLocation(String location) {
-
+    public void setImage(LogImage image)
+    {
+        currentLogData.logImage = image;
     }
 
     @Override
-    public void setDate(Date date) {
+    public void setLocation(LogLocation location)
+    {
+        currentLogData.logLocation = location;
+    }
 
+    @Override
+    public void setDate(Date date)
+    {
+        currentLogData.date = date;
     }
 
     @Override
     public LogData getCurrentLogData()
     {
-        return null;
+        return currentLogData;
     }
 }
