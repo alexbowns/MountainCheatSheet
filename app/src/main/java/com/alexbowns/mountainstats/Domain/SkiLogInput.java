@@ -16,6 +16,11 @@ public class SkiLogInput implements LogInput
         currentLogData = new LogData();
     }
 
+    public SkiLogInput(LogData logData)
+    {
+        currentLogData = logData;
+    }
+
     @Override
     public void setDetails(String details)
     {

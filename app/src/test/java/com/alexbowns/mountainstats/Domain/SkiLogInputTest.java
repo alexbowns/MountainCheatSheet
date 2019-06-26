@@ -117,24 +117,24 @@ public class SkiLogInputTest
     }
 
     @Test
-    public void getCurrentLogData()
+    public void getCurrentLogData_ManuallyUpdateFields()
     {
-        String testDetails = "Dear diary, today I went skiing! It was pow pow.";
-        String testTitle = "Blower pow ahead!";
-        LogImage testImage = new LogImage();
-        Date testDate = new Date(1560959335);
-        LogLocation testLocation = new LogLocation("Crystal Mountain");
-        skiLogInput.setDetails(testDetails);
-        skiLogInput.setTitle(testTitle);
-        skiLogInput.setImage(testImage);
-        skiLogInput.setDate(testDate);
-        skiLogInput.setLocation(testLocation);
-        LogData currentLogData = skiLogInput.getCurrentLogData();
-        assertEquals(testDetails, currentLogData.details);
-        assertEquals(testTitle, currentLogData.title);
-        assertEquals(testDate, currentLogData.date);
-        assertEquals(testImage, currentLogData.logImage);
-        assertEquals(testLocation, currentLogData.logLocation);
+        LogData expected = mockLogData();
+        expected.id = -1; // setting this to the default id for testing purposes since we don't allow skiLogInput to set the id on purpose since that could cause more harm than good for the save logic.
+        skiLogInput.setDetails(expected.details);
+        skiLogInput.setTitle(expected.title);
+        skiLogInput.setImage(expected.logImage);
+        skiLogInput.setDate(expected.date);
+        skiLogInput.setLocation(expected.logLocation);
+        assertEquals(expected, skiLogInput.getCurrentLogData());
+    }
+
+    @Test
+    public void getCurrentLogData_InitLogInputWithLogData()
+    {
+        LogData expected = mockLogData();
+        skiLogInput = new SkiLogInput(expected);
+        assertEquals(expected, skiLogInput.getCurrentLogData());
     }
 
     @Test
@@ -146,5 +146,18 @@ public class SkiLogInputTest
         assertNotNull(currentLogData.logImage);
         assertNotNull(currentLogData.date);
         assertNotNull(currentLogData.logLocation);
+    }
+
+    private LogData mockLogData()
+    {
+        LogData mockLogData = new LogData();
+        mockLogData.id = 2343;
+        mockLogData.details = "Dear diary, today I went skiing! It was pow pow.";
+        mockLogData.title = "Blower pow ahead!";
+        mockLogData.logImage = new LogImage();
+        mockLogData.date = new Date(1560959335);
+        mockLogData.logLocation = new LogLocation("Crystal Mountain");
+
+        return mockLogData;
     }
 }
