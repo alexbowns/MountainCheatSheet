@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class SkiLogDataManagerTest
+public class SkiLogStorageTest
 {
 
     @Before

@@ -25,6 +25,11 @@ public class Log
             logInput = parseLogDataToLogInput(existingLog);
     }
 
+    public void changeLog(LogData logData)
+    {
+        logInput = parseLogDataToLogInput(logData);
+    }
+
     public void setDetails(String details)
     {
         logInput.setDetails(details);

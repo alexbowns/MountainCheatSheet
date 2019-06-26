@@ -5,7 +5,7 @@ import com.alexbowns.mountainstats.InterfaceAdapters.LogStorage;
 
 import java.util.Date;
 
-public class SkiLogDataManager implements LogStorage
+public class SkiLogStorage implements LogStorage
 {
     @Override
     public LogData[] getLogDataForDate(Date date)

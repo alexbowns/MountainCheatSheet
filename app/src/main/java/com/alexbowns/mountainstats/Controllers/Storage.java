@@ -2,13 +2,13 @@ package com.alexbowns.mountainstats.Controllers;
 
 import com.alexbowns.mountainstats.DataObjects.LogData;
 import com.alexbowns.mountainstats.InterfaceAdapters.LogStorage;
-import com.alexbowns.mountainstats.Storage.SkiLogDataManager;
+import com.alexbowns.mountainstats.Storage.SkiLogStorage;
 
 import java.util.Date;
 
 public class Storage
 {
-    private LogStorage logStorage = new SkiLogDataManager();
+    private LogStorage logStorage = new SkiLogStorage();
 
     public void saveCurrentLog(LogData logData)
     {
